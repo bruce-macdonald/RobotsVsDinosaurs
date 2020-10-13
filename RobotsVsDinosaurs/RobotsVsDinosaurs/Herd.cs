@@ -10,7 +10,7 @@ namespace RobotsVsDinosaurs
     {
         //member variables (HAS A)
 
-        public List<Dinosaur> dinosaurs = new List<Dinosaur>();
+        public List<Dinosaur> dinosaurs;
         Dinosaur dinosaur1;
         Dinosaur dinosaur2;
         Dinosaur dinosaur3;
@@ -18,6 +18,7 @@ namespace RobotsVsDinosaurs
         //constructor(spawner, what do they start with)
         public Herd()
         {
+            dinosaurs = new List<Dinosaur>();
             dinosaur1 = new Dinosaur("dinosaur1");
             dinosaur2 = new Dinosaur("dinosaur2");
             dinosaur3 = new Dinosaur("dinosaur3");
@@ -30,12 +31,13 @@ namespace RobotsVsDinosaurs
         {
             if(dinosaur.health <= 0)
             {
-                RemoveDinoFromList(dinosaur);
+                RemoveDinoFromList(dinosaur);                
             }
         }
         public void RemoveDinoFromList(Dinosaur dinosaur)
         {
             dinosaurs.Remove(dinosaur);
+            Console.WriteLine("You've lost a dinosaur! You now have " + dinosaurs.Count + " remaining.");
         }
        
     }

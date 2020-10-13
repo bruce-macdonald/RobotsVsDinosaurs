@@ -15,23 +15,27 @@ namespace RobotsVsDinosaurs
         public int powerLevel;
         public Weapon weapon;
         public int health;
+        Random r = new Random();       
+        
 
         //constructor(spawner, what do they start with, pass in variables needed)
         public Robot(string name)
         {
             this.name = name;
-            this.powerLevel = 100;                  
-            this.health = 100;
-            this.weapon = new Weapon();        
+            this.powerLevel = r.Next(80, 100);
+            this.health = r.Next(85, 125);
+            this.weapon = new Weapon();
+
         }
 
         //member methods(action phrases)
         public void Attack(Dinosaur dinosaur)
         {
-            dinosaur.health -= powerLevel;
+            dinosaur.health -= weapon.attackPower;
             powerLevel -= 10;
         }
 
+        
 
     }
 }
