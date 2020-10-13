@@ -10,6 +10,10 @@ namespace RobotsVsDinosaurs
     {
         static void Main(string[] args)
         {
+            Battlefield test = new Battlefield();
+            test.Battle();
+            Console.ReadLine();
+
         }
     }
 }
